@@ -2,16 +2,22 @@
     padding-top: 3rem;
 }
 .row {
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
 }
 form {
-    text-align: center;
+    text-align: left;
+}
+.form-group, button {
+    margin: 0 auto;
+}
+.form-control {
+    width: 350px;
 }
 .btn,
 .btn:disabled:hover {
     background-color: #009688;
     border-color: #009688;
-    margin-left: 2rem;
+    margin-left: -1rem;
 }
 .btn:hover {
     background-color: #00796B;
@@ -27,4 +33,8 @@ h5 {
     color: #CCC;
     text-align: center;
     margin-top: 3rem;
+}
+
+app-card {
+    margin-bottom: 12px;
 }

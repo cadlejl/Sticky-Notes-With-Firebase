@@ -9,14 +9,14 @@ import { Task } from "./model/task";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app'; // Don't know what this is for.
+  //title = 'app'; // Don't know what this is for.
 
   private tasks: Task[] = [];
-    private currentTask = new Task(null, false);
+  private currentTask = new Task(null, false);
 
-    addTask() {
-        let task = new Task(this.currentTask.content, this.currentTask.completed);
-        this.tasks.push(task);
-        this.currentTask.content = null;
-    }
+  addTask() {
+      let task = new Task(this.currentTask.content, this.currentTask.completed);
+      this.tasks.push(task);
+      this.currentTask.content = null;
+  }
 }
