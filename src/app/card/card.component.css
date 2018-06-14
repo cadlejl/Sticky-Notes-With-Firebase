@@ -13,8 +13,12 @@
     background-color: #EEE;
     color: #CCC;
 }
-.card-footer {
-    text-align: right;
+.fa-trash {
+    font-size: 1.5rem;
+    float: right;
+}
+.delete.fa.fa-trash:hover {
+    color: #cc0000;
 }
 i {
     color: #CC0000;

@@ -1,14 +1,27 @@
-<div>
+<div  *ngIf="!cardTask.deleted">
   <div 
     class="card" 
     (click)="statusToggle()" 
-    [class.completed]="task.completed">
+    [class.completed]="cardTask.completed">
       <div class="card-body">
-          <p>{{ task.content }}</p>
+          <p>{{ cardTask.content }}</p>
       </div>
       <div class="card-footer">
-          <span *ngIf="!task.completed"><i class="fa fa-times" aria-hidden="true"></i>Not Complete</span>
-          <span [hidden]="!task.completed"><i class="fa fa-check" aria-hidden="true"></i>Completed</span>
+          <span 
+            *ngIf="!cardTask.completed">
+            <i class="fa fa-times" aria-hidden="true"></i>
+            Not Complete
+        </span>
+          <span 
+            *ngIf="cardTask.completed">
+            <i class="fa fa-check" aria-hidden="true"></i>
+            Completed
+            <i 
+                class="delete fa fa-trash" 
+                aria-hidden="true" 
+                (click)="deleted()">
+            </i>
+        </span>
       </div>
   </div>
 </div>
