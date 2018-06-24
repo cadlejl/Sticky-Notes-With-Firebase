@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Task } from "./model/task";
+import { Note } from "./model/note";
 
 @Component({
   /*moduleId: module.id, From old version. Don't know if it will be needed */
@@ -11,21 +11,21 @@ import { Task } from "./model/task";
 export class AppComponent {
   //title = 'app'; // Don't know what this is for.
 
-  private tasks: Task[] = [];
-  private currentTask = new Task(null, false, false);
+  private notes: Note[] = [];
+  private currentNote = new Note(null, false, false);
 
-  addTask() {
-      let task = new Task(
-        this.currentTask.content, 
-        this.currentTask.completed, 
-        this.currentTask.deleted
+  addNote() {
+      let note = new Note(
+        this.currentNote.content, 
+        this.currentNote.completed, 
+        this.currentNote.deleted
       );
-      this.tasks.push(task);
-      this.currentTask.content = null;
+      this.notes.push(note);
+      this.currentNote.content = null;
   }
 
-  deleteTask(task: Task) {
-    let index = this.tasks.indexOf(task);
-    this.tasks.splice(index, 1);
+  deleteNote(note: Note) {
+    let index = this.notes.indexOf(note);
+    this.notes.splice(index, 1);
   }
 }

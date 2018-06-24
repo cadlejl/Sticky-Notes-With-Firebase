@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
+import { NoteComponent } from './note/note.component';
 
 import { Firebase } from "firebase/database";
 
@@ -31,7 +31,7 @@ const fbConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    NoteComponent
   ],
   imports: [
     BrowserModule,

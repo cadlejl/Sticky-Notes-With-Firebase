@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <form class="form-inline" (submit)="addTask()" #taskForm="ngForm">
+      <form class="form-inline" (submit)="addNote()" #noteForm="ngForm">
         <div class="form-group">
           <label for="content-field" class="sr-only"></label>
           <input 
@@ -10,13 +10,13 @@
             id="content-field"
             required
             placeholder="Enter a task..."
-            [(ngModel)]="currentTask.content"
+            [(ngModel)]="currentNote.content"
             name="content">
         </div>
         <button 
           type="submit"
           class="btn btn-primary"
-          [disabled]="taskForm.form.invalid">
+          [disabled]="noteForm.form.invalid">
           <i class="fa fa-plus" aria-hidden="true"></i>
           Add Task
         </button>
@@ -26,14 +26,14 @@
   <div class="row">
     <div class="col-md">
       <div class="row">
-        <app-card 
-          *ngFor="let appTask of tasks" 
-          [cardTask]="appTask" 
+        <app-note 
+          *ngFor="let appNote of notes" 
+          [cardNote]="appNote" 
           class="col-md-3"
-          (deletedTask)="deleteTask(appTask)">
-        </app-card>
+          (deletedNote)="deleteNote(appNote)">
+        </app-note>
       </div>
-      <h5 class="col-md" *ngIf="tasks.length === 0">
+      <h5 class="col-md" *ngIf="notes.length === 0">
         <p>The task list is empty</p>
         <p>Add new tasks using the form above</p>
       </h5>

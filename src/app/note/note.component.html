@@ -1,19 +1,19 @@
-<div  *ngIf="!cardTask.deleted">
+<div  *ngIf="!cardNote.deleted">
   <div 
     class="card" 
     (click)="statusToggle()" 
-    [class.completed]="cardTask.completed">
+    [class.completed]="cardNote.completed">
       <div class="card-body">
-          <p>{{ cardTask.content }}</p>
+          <p>{{ cardNote.content }}</p>
       </div>
       <div class="card-footer">
           <span 
-            *ngIf="!cardTask.completed">
+            *ngIf="!cardNote.completed">
             <i class="fa fa-times" aria-hidden="true"></i>
             Not Complete
         </span>
           <span 
-            *ngIf="cardTask.completed">
+            *ngIf="cardNote.completed">
             <i class="fa fa-check" aria-hidden="true"></i>
             Completed
             <i 
