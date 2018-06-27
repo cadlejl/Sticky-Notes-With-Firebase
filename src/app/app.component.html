@@ -30,7 +30,8 @@
           *ngFor="let appNote of notes" 
           [cardNote]="appNote" 
           class="col-md-3"
-          (deletedNote)="deleteNote(appNote)">
+          (deletedNote)="deleteNote(appNote)"
+          (toggleCompleted)="updateNote($event)">
         </app-note>
       </div>
       <h5 class="col-md" *ngIf="notes.length === 0">

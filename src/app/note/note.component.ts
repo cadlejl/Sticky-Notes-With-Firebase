@@ -12,9 +12,12 @@ import { Note } from '../model/note';
 export class NoteComponent {
   @Input() cardNote: Note;
   @Output() deletedNote = new EventEmitter<any>();
+  @Output() toggleCompleted = new EventEmitter<any>();
 
   statusToggle() {
+    
     this.cardNote.completed = !this.cardNote.completed;
+    this.toggleCompleted.emit(this.cardNote);
   }
 
   deleted() {

@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+//import { RouterModule, Routes } from '@angular/router';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from "angularfire2/database";
+import { environment } from '../environments/environment';
 
 // Addition
 import { FormsModule } from '@angular/forms';
@@ -8,25 +12,19 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NoteComponent } from './note/note.component';
 
-import { Firebase } from "firebase/database";
+import { NoteService } from "./service/note.service";
+
 
 // const appRoutes: Routes = [
+//   // { 
+//   //   path: "", 
+//   //   component: AppComponent 
+//   // }/*,
 //   { 
 //     path: "client/:id", 
-//     component: ClientDetailsComponent
+//     component: NoteComponent
 //   }
 // ]
-
-// Initialize Firebase
-const fbConfig = {
-  apiKey: "AIzaSyBrane3AFXgBbvk-oKKdogxBdcYLTwALqI",
-  authDomain: "sticky-notes-fb.firebaseapp.com",
-  databaseURL: "https://sticky-notes-fb.firebaseio.com",
-  projectId: "sticky-notes-fb",
-  storageBucket: "sticky-notes-fb.appspot.com",
-  messagingSenderId: "248265280533"
-};
-//firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
@@ -35,9 +33,12 @@ const fbConfig = {
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    //RouterModule.forRoot(appRoutes),
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebase /*,'my-app-name'*/)
   ],
-  providers: [],
+  providers: [ NoteService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

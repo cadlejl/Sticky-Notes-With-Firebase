@@ -4,7 +4,8 @@
     (click)="statusToggle()" 
     [class.completed]="cardNote.completed">
       <div class="card-body">
-          <p>{{ cardNote.content }}</p>
+        <span [hidden]="true">{{ cardNote.key }}</span>
+        <p>{{ cardNote.content }}</p>
       </div>
       <div class="card-footer">
           <span 
