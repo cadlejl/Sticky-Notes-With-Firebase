@@ -1,10 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Note } from '../model/note';
-//import { EventEmitter } from 'events'; This one was imported automatically and was not generic. Interesting.
 
 @Component({
-  /*moduleId: module.id, Don't know if this is needed */
   selector: 'app-note',
   templateUrl: './note.component.html',
   styleUrls: ['./note.component.css']
@@ -15,7 +13,6 @@ export class NoteComponent {
   @Output() toggleCompleted = new EventEmitter<any>();
 
   statusToggle() {
-    
     this.cardNote.completed = !this.cardNote.completed;
     this.toggleCompleted.emit(this.cardNote);
   }

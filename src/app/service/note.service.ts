@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { Note } from "../model/note";
 
-
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class NoteService {
   private notes: Observable<any[]>;
   private keys: Observable<any[]>;
