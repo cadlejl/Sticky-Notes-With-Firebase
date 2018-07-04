@@ -23,6 +23,12 @@
       </form>
     </div>
   </div>
+  <div class="appAlerts">
+    <app-alerts
+      [alert]="noteAdded"
+      (alerted)="noteAdded = $event">
+    </app-alerts>
+  </div>
   <div class="row">
     <div class="col-md">
       <div class="row">

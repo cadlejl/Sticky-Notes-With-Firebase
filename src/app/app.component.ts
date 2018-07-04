@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 
 import { Note } from "./model/note";
 
@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   private notes: Note[] = [];
   private currentNote = new Note(null, false, false, null);
   private keys;
+  public noteAdded = false;
+  
 
   constructor(public noteService: NoteService) {}
 
@@ -29,14 +31,15 @@ export class AppComponent implements OnInit {
   }
 
   addNote() {
-      let note = new Note(
-        this.currentNote.content, 
-        this.currentNote.completed, 
-        this.currentNote.deleted,
-        this.currentNote.key
-      );
-      this.noteService.addNote(note);
-      this.currentNote.content = null;
+    let note = new Note(
+      this.currentNote.content, 
+      this.currentNote.completed, 
+      this.currentNote.deleted,
+      this.currentNote.key
+    );
+    this.noteService.addNote(note);
+    this.currentNote.content = null;
+    this.noteAdded = !this.noteAdded;
   }
 
   updateNote($event) {

@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { NoteComponent } from './note/note.component';
 
 import { NoteService } from "./service/note.service";
+import { AlertsComponent } from './alerts/alerts.component';
 
 
 // const appRoutes: Routes = [
@@ -29,7 +30,8 @@ import { NoteService } from "./service/note.service";
 @NgModule({
   declarations: [
     AppComponent,
-    NoteComponent
+    NoteComponent,
+    AlertsComponent
   ],
   imports: [
     BrowserModule,

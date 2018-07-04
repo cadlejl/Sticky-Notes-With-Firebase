@@ -1,0 +1,20 @@
+p {
+    height: 36px;
+    margin: auto;
+    color: green;
+    background: palegreen;
+    /* -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out; */
+
+    /* opacity: 1;
+    -webkit-transition: opacity 3s ease-in-out;
+    -moz-transition: opacity 3s ease-in-out;
+    -ms-transition: opacity 3s ease-in-out;
+    -o-transition: opacity 3s ease-in-out; */
+    
+
+    border: 1px solid green;
+    padding: 2px;
+}
